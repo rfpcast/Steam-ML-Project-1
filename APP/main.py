@@ -28,12 +28,9 @@ async def UserForGenre(genero: str):
 @app.get("/UsersRecommend")
 async def UsersRecommend(año: int):
     """
-    recibe un año
+    Devuelve el top 3 de juegos MÁS recomendados por usuarios para el año dado. (reviews.recommend = True y comentarios positivos/neutrales)
 
-    Devuelve el top 3 de juegos MÁS recomendados por usuarios para el año dado.
-
-    Ejemplo de retorno:
-    [{"Puesto 1": X}, {"Puesto 2": Y}, {"Puesto 3": Z}]
+    Ejemplo de retorno: [{"Puesto 1": X}, {"Puesto 2": Y}, {"Puesto 3": Z}]
     """
     return fe.endpoint3(año)
 
@@ -41,12 +38,9 @@ async def UsersRecommend(año: int):
 @app.get("/UsersWorstDeveloper")
 async def UsersWorstDeveloper(año: int):
     """
-    recibe un año
+    Devuelve el top 3 de desarrolladoras con juegos MENOS recomendados por usuarios para el año dado. (reviews.recommend = False y comentarios negativos)
 
-    Devuelve el top 3 de desarrolladoras con juegos MENOS recomendados por usuarios para el año dado.
-
-    Ejemplo de retorno:
-    [{"Puesto 1": X}, {"Puesto 2": Y}, {"Puesto 3": Z}]
+    Ejemplo de retorno: [{"Puesto 1": X}, {"Puesto 2": Y}, {"Puesto 3": Z}]
     """
     return fe.endpoint4(año)
 
@@ -54,12 +48,10 @@ async def UsersWorstDeveloper(año: int):
 @app.get("/sentiment_analysis")
 async def sentiment_analysis(empresa_desarrolladora: str):
     """
-    recibe el nombre de una empresa
+    Según la empresa desarrolladora, se devuelve un diccionario con el nombre de la desarrolladora como llave y una lista con la cantidad 
+    total de registros de reseñas de usuarios que se encuentren categorizados con un análisis de sentimiento como valor.
 
-    Según la empresa desarrolladora, se devuelve un diccionario con el nombre de la desarrolladora como llave y una lista con la cantidad total de registros de reseñas de usuarios que se encuentren categorizados con un análisis de sentimiento como valor.
-
-    Ejemplo de retorno:
-    {'Valve': {'Negative': 182, 'Neutral': 120, 'Positive': 278}}
+    Ejemplo de retorno: {'Valve': {'Negative': 182, 'Neutral': 120, 'Positive': 278}}
     """
     return fe.endpoint5(empresa_desarrolladora)
 
@@ -67,11 +59,7 @@ async def sentiment_analysis(empresa_desarrolladora: str):
 @app.get("/recomendacion_juego")
 async def recomendacion_juego(id_producto: int):
     """
-    recibe el id de un juego
+    Ingresando el id de producto, deberíamos recibir una lista con 5 juegos recomendados similares al ingresado.
 
-    Devuelve una lista con 5 juegos recomendados similares al ingresado.
-
-    Returns:
-        List[int]: Una lista con los IDs de los juegos recomendados.
     """
     return fe.modelo_recomendacion(id_producto)
