@@ -7,7 +7,7 @@ df_endpoints_3 = pd.read_csv('Endpoints_df/Endpoint_3.csv')
 df_endpoints_4 = pd.read_csv('Endpoints_df/Endpoint_4.csv')
 df_endpoints_5 = pd.read_csv('Endpoints_df/Endpoint_5.csv')
 
-sim_coseno = np.load('sim_coseno.npy')
+sim_coseno = np.load('Endpoints_df/sim_coseno.npy')
 
 df_MLM = pd.read_csv('Endpoints_df/data_MLM_1.csv')
 
