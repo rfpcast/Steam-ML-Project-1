@@ -32,3 +32,9 @@ y por ultimo hacer uso de la formula de la similitud de coseno, para al tomar su
 
 ## Paso 4: Proceso de ETL para la generacion de los endpoints de la APP
 
+En este paso se toman todos los archivo CSV creados en el paso 1 y se procede a limpiarlos y normalizarlos para la creacion de los dataframes/CSV finales que contiene los datos procesados de los endpoints para la API, en este proceso se toman los datos relevantes se formatean a un dataframe con la primera columna conteniendo la entrada de la funcion endpoint y la columna con la salida ya formateada en forma de diccionario, cada uno de los 5 endpoints tiene asociado su dataframe cargado previamente de un archivo CSV, incluyendo el sistema de recomendacion desarrollado en el archivo **"ML_Model_Steam_project1"**, el detalle del proceso de ETL para la formacion de los DF finales esta en el archivo **"ETL_Endpoints"**, y los archivos estan en la carpeta **"/Endpoints_df"**
+
+## Paso 5: Deployment de la API (Local y Render)
+
+El ultimo paso es el deployment de la API en local con el framework FastAPI, este esta en los archivos principales del repositorio que incluye **"Funciones_endpoints.py"** y **"main.py"**, para el deployment y una demo de los endpoints en formato notebook en el archivo **"Funciones_endpoints.ipynb"**, se levanto en render la API pueden encontrar el deployment en este **[Link](https://steam-p1-v14.onrender.com)**.  
+ 
