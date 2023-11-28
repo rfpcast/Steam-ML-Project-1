@@ -24,13 +24,13 @@ procesamiento de lenguaje natural que lee las reseñas guardadas en el archivo *
 
 Este modlo sirve para la construccion de los dataframes finales que seran utilizados en la construccion de los endpoints
 
-## Paso 3: Sistema de recomendacion con matriz vectorial y similitud de coseno
+## Paso 3: Sistema de recomendacion con modelo de similitud de coseno
 
 Una de las funciones mas importantes de la API es un sistema de recomendacion que permite al colocar el numero de id de juego, recibir 3 o mas recomendaciones de contenido similar, para esto se uso los datos recopilados previamente CSV para generar un modelo
 de recomendacion basado en similitud de coseno, para esto se importan librearias de scikit, para vectorizar con valores con TF IDF una verz vectorizados se agrupan para formar una matriz de vectores y aplicar la reduccion de la dimensionalidad a traves de SVD
 y por ultimo hacer uso de la formula de la similitud de coseno, para al tomar sus indices se puede guardar y usar en el deployment de los endpoints, el desarrollo detallado de este modelo de recomendacion esta en el archivo **"ML_Model_Steam_project1"**
 
-## Paso 4: Proceso de ETL para la generacion de los endpoints de la APP
+## Paso 4: Proceso de ETL para la generacion de los endpoints de la API
 
 En este paso se toman todos los archivo CSV creados en el paso 1 y se procede a limpiarlos y normalizarlos para la creacion de los dataframes/CSV finales que contiene los datos procesados de los endpoints para la API, en este proceso se toman los datos relevantes se formatean a un dataframe con la primera columna conteniendo la entrada de la funcion endpoint y la columna con la salida ya formateada en forma de diccionario, cada uno de los 5 endpoints tiene asociado su dataframe cargado previamente de un archivo CSV, incluyendo el sistema de recomendacion desarrollado en el archivo **"ML_Model_Steam_project1"**, el detalle del proceso de ETL para la formacion de los DF finales esta en el archivo **"ETL_Endpoints"**, y los archivos estan en la carpeta **"/Endpoints_df"**
 
