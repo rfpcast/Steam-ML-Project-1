@@ -24,7 +24,7 @@ procesamiento de lenguaje natural que lee las reseñas guardadas en el archivo *
 
 Este modlo sirve para la construccion de los dataframes finales que seran utilizados en la construccion de los endpoints
 
-## Paso 3: Sistema de recomendacion con modelo de similitud de coseno
+## Paso 3: Sistema de recomendacion con matriz vectorial y similitud de coseno
 
 Una de las funciones mas importantes de la API es un sistema de recomendacion que permite al colocar el numero de id de juego, recibir 3 o mas recomendaciones de contenido similar, para esto se uso los datos recopilados previamente CSV para generar un modelo
 de recomendacion basado en similitud de coseno, para esto se importan librearias de scikit, para vectorizar con valores con TF IDF una verz vectorizados se agrupan para formar una matriz de vectores y aplicar la reduccion de la dimensionalidad a traves de SVD
